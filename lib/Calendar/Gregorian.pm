@@ -1,6 +1,7 @@
 package Calendar::Gregorian;
 
-$Calendar::Gregorian::VERSION = '0.01';
+$Calendar::Gregorian::VERSION   = '0.02';
+$Calendar::Gregorian::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
 
@@ -8,7 +9,7 @@ Calendar::Gregorian - Interface to Gregorian Calendar.
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
@@ -141,7 +142,7 @@ Mohammad S Anwar, C<< <mohammad.anwar at yahoo.com> >>
 
 =head1 REPOSITORY
 
-L<https://github.com/Manwar/Calendar-Gregorian>
+L<https://github.com/manwar/Calendar-Gregorian>
 
 =head1 BUGS
 
