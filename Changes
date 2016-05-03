@@ -1,5 +1,10 @@
 Revision history for Calendar::Gregorian
 
+0.03  Tue May 03 11:10:00 2016
+      - Added method as_svg() using the plugin Calendar::Plugin::Renderer.
+      - Upgraded to use Date::Gregorian::Simple v0.04.
+      - Added section "SEE ALSO".
+
 0.02  Sun Apr 03 21:45:00 2016
       - Added LICENSE file.
 

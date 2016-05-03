@@ -21,7 +21,7 @@ WriteMakefile(
     PREREQ_PM => {
         'Moo'                     => '2.000000',
         'namespace::clean'        => '0.24',
-        'Date::Gregorian::Simple' => '0.01',
+        'Date::Gregorian::Simple' => '0.04',
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'Calendar-Gregorian-*' },

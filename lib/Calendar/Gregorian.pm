@@ -1,6 +1,6 @@
 package Calendar::Gregorian;
 
-$Calendar::Gregorian::VERSION   = '0.02';
+$Calendar::Gregorian::VERSION   = '0.03';
 $Calendar::Gregorian::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,21 +9,26 @@ Calendar::Gregorian - Interface to Gregorian Calendar.
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
+use 5.006;
 use Data::Dumper;
-use Date::Gregorian::Simple;
 
+use Date::Gregorian::Simple;
 use Moo;
 use namespace::clean;
 
+use Role::Tiny qw();
+use Module::Pluggable search_path => ['Calendar::Plugin'], require => 1, max_depth => 3;
+
 use overload q{""} => 'as_string', fallback => 1;
 
-has year  => (is => 'rw', predicate => 1);
-has month => (is => 'rw', predicate => 1);
-has date  => (is => 'ro', default   => sub { Date::Gregorian::Simple->new });
+has year    => (is => 'rw', predicate => 1);
+has month   => (is => 'rw', predicate => 1);
+has date    => (is => 'ro', default   => sub { Date::Gregorian::Simple->new });
+has _plugin => (is => 'rw', default   => sub { 0 });
 
 sub BUILD {
     my ($self) = @_;
@@ -34,6 +39,13 @@ sub BUILD {
     unless ($self->has_year && $self->has_month) {
         $self->year($self->date->year);
         $self->month($self->date->month);
+    }
+
+    my $plugins = [ Calendar::Gregorian::plugins ];
+    foreach (@{$plugins}) {
+        next unless ($_ eq 'Calendar::Plugin::Renderer');
+        Role::Tiny->apply_roles_to_object($self, $_);
+        $self->_plugin(1);
     }
 }
 
@@ -69,6 +81,10 @@ sub BUILD {
 
     # prints gregorian month calendar in which the given julian date falls in.
     print Calendar::Gregorian->new->from_julian(2457102.5), "\n";
+
+    # prints current month gregorian calendar in SVG format if the plugin
+    # Calendar::Plugin::Renderer v0.04 or above is installed.
+    print Calendar::Gregorian->new->as_svg;
 
 =head1 GREGORIAN MONTHS
 
@@ -130,6 +146,38 @@ sub from_julian {
     return $self->date->get_calendar($date->month, $date->year);
 }
 
+=head2 as_svg($month, $year)
+
+Returns calendar for the given C<$month> and C<$year> rendered  in SVG format. If
+C<$month> and C<$year> missing, it would return current calendar month.The Plugin
+L<Calendar::Plugin::Renderer> v0.04 or above must be installed for this to work.
+
+=cut
+
+sub as_svg {
+    my ($self, $month, $year) = @_;
+
+    die "ERROR: Plugin Calendar::Plugin::Renderer v0.04 or above is missing,".
+        "please install it first.\n" unless ($self->_plugin);
+
+    if (defined $month && defined $year) {
+        $self->date->validate_month($month);
+        $self->date->validate_year($year);
+    }
+    else {
+        $month = $self->month;
+        $year  = $self->year;
+    }
+
+    my $date = Date::Gregorian::Simple->new({ year => $year, month => $month, day => 1 });
+
+    return $self->svg_calendar({
+        start_index => $date->day_of_week + 1,
+        month_name  => $date->gregorian_months->[$month],
+        days        => $date->days_in_month_year($month, $year),
+        year        => $year });
+}
+
 sub as_string {
     my ($self) = @_;
 
@@ -143,6 +191,20 @@ Mohammad S Anwar, C<< <mohammad.anwar at yahoo.com> >>
 =head1 REPOSITORY
 
 L<https://github.com/manwar/Calendar-Gregorian>
+
+=head1 SEE ALSO
+
+=over 4
+
+=item L<Calendar::Bahai>
+
+=item L<Calendar::Hijri>
+
+=item L<Calendar::Persian>
+
+=item L<Calendar::Saka>
+
+=back
 
 =head1 BUGS
 
