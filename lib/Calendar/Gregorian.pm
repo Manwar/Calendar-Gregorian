@@ -1,6 +1,6 @@
 package Calendar::Gregorian;
 
-$Calendar::Gregorian::VERSION   = '0.03';
+$Calendar::Gregorian::VERSION   = '0.04';
 $Calendar::Gregorian::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,7 +9,7 @@ Calendar::Gregorian - Interface to Gregorian Calendar.
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
@@ -50,6 +50,11 @@ sub BUILD {
 }
 
 =head1 DESCRIPTION
+
+Simple Gregorian Calendar interface and used by  another package L<App::calendr>.
+On installation of L<App::calendar> you get a handy command line tool B<calendr>.
+
+Look for more details in the pod for L<App::calendr>.
 
     +-----------------------------------------------------------------------------------+
     |                                  March [2016 BE]                                  |
@@ -150,7 +155,7 @@ sub from_julian {
 
 Returns calendar for the given C<$month> and C<$year> rendered  in SVG format. If
 C<$month> and C<$year> missing, it would return current calendar month.The Plugin
-L<Calendar::Plugin::Renderer> v0.04 or above must be installed for this to work.
+L<Calendar::Plugin::Renderer> v0.06 or above must be installed for this to work.
 
 =cut
 
