@@ -52,7 +52,7 @@ sub BUILD {
 =head1 DESCRIPTION
 
 Simple Gregorian Calendar interface and used by  another package L<App::calendr>.
-On installation of L<App::calendar> you get a handy command line tool B<calendr>.
+On installation of L<App::calendr> you get a handy command line tool B<calendr>.
 
 Look for more details in the pod for L<App::calendr>.
 
