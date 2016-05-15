@@ -1,5 +1,10 @@
 Revision history for Calendar::Gregorian
 
+0.05  Sun May 15 09:20:00 2016
+      - Merge pull request #1, thanks polettix.
+      - Updated dependency on Date::Gregorian::Simple v0.05.
+      - Updated method as_svg().
+
 0.04  Fri May 06 10:45:00 2016
       - Fixed missing import (Module::Pluggable).
       - Updated pod document in general.

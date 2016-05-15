@@ -1,6 +1,6 @@
 package Calendar::Gregorian;
 
-$Calendar::Gregorian::VERSION   = '0.04';
+$Calendar::Gregorian::VERSION   = '0.05';
 $Calendar::Gregorian::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,7 +9,7 @@ Calendar::Gregorian - Interface to Gregorian Calendar.
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 
@@ -162,7 +162,7 @@ L<Calendar::Plugin::Renderer> v0.06 or above must be installed for this to work.
 sub as_svg {
     my ($self, $month, $year) = @_;
 
-    die "ERROR: Plugin Calendar::Plugin::Renderer v0.04 or above is missing,".
+    die "ERROR: Plugin Calendar::Plugin::Renderer v0.06 or above is missing,".
         "please install it first.\n" unless ($self->_plugin);
 
     if (defined $month && defined $year) {
@@ -178,7 +178,7 @@ sub as_svg {
 
     return $self->svg_calendar({
         start_index => $date->day_of_week + 1,
-        month_name  => $date->gregorian_months->[$month],
+        month_name  => $date->months->[$month],
         days        => $date->days_in_month_year($month, $year),
         year        => $year });
 }
