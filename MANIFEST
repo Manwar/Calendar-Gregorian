@@ -8,3 +8,6 @@ lib/Calendar/Gregorian.pm
 t/00-load.t
 t/manifest.t
 t/pod.t
+t/calendar-gregorian.t
+t/fake-gregorian.xml
+t/gregorian.xml

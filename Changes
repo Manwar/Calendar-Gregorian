@@ -1,5 +1,11 @@
 Revision history for Calendar::Gregorian
 
+0.06  Sat Jul 02 03:15:00 2016
+      - Added method as_text().
+      - Updated method as_svg() with regard to start index.
+      - Added dependency on Calendar::Plugin::Renderer v0.07.
+      - Added test for method as_svg().
+
 0.05  Sun May 15 09:20:00 2016
       - Merge pull request #1, thanks polettix.
       - Updated dependency on Date::Gregorian::Simple v0.05.
