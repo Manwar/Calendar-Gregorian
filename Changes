@@ -1,5 +1,8 @@
 Revision history for Calendar::Gregorian
 
+0.08  Wed Sep 28 09:40:00 2016
+      - Added key 'provides' to the Makefile.PL script.
+
 0.07  Mon Aug 08 08:40:00 2016
       - Updated dependency on Date::Gregorian::Simple v0.07.
 
