@@ -1,6 +1,6 @@
 package Calendar::Gregorian;
 
-$Calendar::Gregorian::VERSION   = '0.08';
+$Calendar::Gregorian::VERSION   = '0.09';
 $Calendar::Gregorian::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,7 +9,7 @@ Calendar::Gregorian - Interface to Gregorian Calendar.
 
 =head1 VERSION
 
-Version 0.08
+Version 0.09
 
 =cut
 
@@ -40,10 +40,7 @@ sub BUILD {
 
 =head1 DESCRIPTION
 
-Simple Gregorian Calendar interface and used by  another package L<App::calendr>.
-On installation of L<App::calendr> you get a handy command line tool B<calendr>.
-
-Look for more details in the pod for L<App::calendr>.
+Simple Gregorian Calendar interface.
 
     +-----------------------------------------------------------------------------------+
     |                                  March [2016 BE]                                  |
@@ -60,6 +57,9 @@ Look for more details in the pod for L<App::calendr>.
     +-----------+-----------+-----------+-----------+-----------+-----------+-----------+
     |        27 |        28 |        29 |        30 |        31 |                       |
     +-----------+-----------+-----------+-----------+-----------+-----------+-----------+
+
+The package L<App::calendr> provides command line tool  C<calendr> to display the
+supported calendars on the terminal.
 
 =head1 SYNOPSIS
 
