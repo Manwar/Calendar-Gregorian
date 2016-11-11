@@ -1,5 +1,8 @@
 Revision history for Calendar::Gregorian
 
+0.10  Fri Nov 11 05:55:00 2016
+      - Updated dependency on Date::Gregorian::Simple v0.08.
+
 0.09  Sun Oct 16 09:00:00 2016
       - Added dependency on Calendar::Plugin::Renderer v0.11.
 
