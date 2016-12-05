@@ -1,6 +1,6 @@
 package Calendar::Gregorian;
 
-$Calendar::Gregorian::VERSION   = '0.10';
+$Calendar::Gregorian::VERSION   = '0.11';
 $Calendar::Gregorian::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,7 +9,7 @@ Calendar::Gregorian - Interface to Gregorian Calendar.
 
 =head1 VERSION
 
-Version 0.10
+Version 0.11
 
 =cut
 

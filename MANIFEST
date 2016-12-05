@@ -11,3 +11,5 @@ t/pod.t
 t/calendar-gregorian.t
 t/fake-gregorian.xml
 t/gregorian.xml
+t/meta-json.t
+t/meta-yml.t
