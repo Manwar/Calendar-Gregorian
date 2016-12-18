@@ -1,5 +1,8 @@
 Revision history for Calendar::Gregorian
 
+0.12  Sun Dec 18 02:45:00 2016
+      - Updated dependency on Date::Gregorian::Simple v0.09.
+
 0.11  Mon Dec 05 12:50:00 2016
       - Added test scripts (t/meta-json.t and t/meta-yml.t).
 
