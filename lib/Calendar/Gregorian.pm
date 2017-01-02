@@ -1,6 +1,6 @@
 package Calendar::Gregorian;
 
-$Calendar::Gregorian::VERSION   = '0.12';
+$Calendar::Gregorian::VERSION   = '0.13';
 $Calendar::Gregorian::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,7 +9,7 @@ Calendar::Gregorian - Interface to Gregorian Calendar.
 
 =head1 VERSION
 
-Version 0.12
+Version 0.13
 
 =cut
 
@@ -78,6 +78,9 @@ supported calendars on the terminal.
 
     # prints current month gregorian calendar in SVG format.
     print Calendar::Gregorian->new->as_svg;
+
+    # prints current month gregorian calendar in text format.
+    print Calendar::Gregorian->new->as_text;
 
 =head1 GREGORIAN MONTHS
 
@@ -163,7 +166,8 @@ sub as_svg {
 
 =head2 as_text($month, $year)
 
-Returns color coded Gregorian calendar for the given C<$month> and C<$year>.
+Returns  color  coded Gregorian calendar for the given C<$month> and C<$year>. If
+C<$month> and C<$year> missing, it would return current calendar month.
 
 =cut
 

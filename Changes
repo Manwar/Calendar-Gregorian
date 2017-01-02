@@ -1,5 +1,9 @@
 Revision history for Calendar::Gregorian
 
+0.13  Mon Jan 02 12:45:00 2017
+      - Added sample code for method as_text() in the SYNOPSIS section.
+      - Updated pod document for method as_text().
+
 0.12  Sun Dec 18 02:45:00 2016
       - Updated dependency on Date::Gregorian::Simple v0.09.
 

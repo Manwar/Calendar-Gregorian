@@ -31,7 +31,7 @@ WriteMakefile(
     (eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (META_MERGE => {
         'meta-spec' => { version => 2 },
         provides    => {
-            'Calendar::Gregorian' => { file => 'lib/Calendar/Gregorian.pm', version => '0.12' },
+            'Calendar::Gregorian' => { file => 'lib/Calendar/Gregorian.pm', version => '0.13' },
         },
         resources => {
             repository => {
