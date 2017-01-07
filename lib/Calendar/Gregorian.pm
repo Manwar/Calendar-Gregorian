@@ -1,6 +1,6 @@
 package Calendar::Gregorian;
 
-$Calendar::Gregorian::VERSION   = '0.13';
+$Calendar::Gregorian::VERSION   = '0.14';
 $Calendar::Gregorian::AUTHORITY = 'cpan:MANWAR';
 
 =head1 NAME
@@ -9,7 +9,7 @@ Calendar::Gregorian - Interface to Gregorian Calendar.
 
 =head1 VERSION
 
-Version 0.13
+Version 0.14
 
 =cut
 
@@ -191,29 +191,6 @@ sub as_string {
     my ($self) = @_;
 
     return $self->as_text($self->month, $self->year);
-}
-
-#
-#
-# PRIVATE METHODS
-
-sub validate_params {
-    my ($self, $month, $year) = @_;
-
-    if (defined $month && defined $year) {
-        $self->date->validate_month($month);
-        $self->date->validate_year($year);
-
-        if ($month !~ /^\d+$/) {
-            $month = $self->date->get_month_number($month);
-        }
-    }
-    else {
-        $month = $self->month;
-        $year  = $self->year;
-    }
-
-    return ($month, $year);
 }
 
 =head1 AUTHOR

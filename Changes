@@ -1,5 +1,9 @@
 Revision history for Calendar::Gregorian
 
+0.14  Sat Jan 07 22:20:00 2017
+      - Added dependency on Calendar::Plugin::Renderer v0.12.
+      - Removed method validate_params(), no longer required.
+
 0.13  Mon Jan 02 12:45:00 2017
       - Added sample code for method as_text() in the SYNOPSIS section.
       - Updated pod document for method as_text().

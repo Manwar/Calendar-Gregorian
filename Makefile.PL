@@ -24,14 +24,14 @@ WriteMakefile(
         'Moo'                        => '2.000000',
         'namespace::clean'           => '0.24',
         'Date::Gregorian::Simple'    => '0.09',
-        'Calendar::Plugin::Renderer' => '0.11',
+        'Calendar::Plugin::Renderer' => '0.12',
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'Calendar-Gregorian-*' },
     (eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (META_MERGE => {
         'meta-spec' => { version => 2 },
         provides    => {
-            'Calendar::Gregorian' => { file => 'lib/Calendar/Gregorian.pm', version => '0.13' },
+            'Calendar::Gregorian' => { file => 'lib/Calendar/Gregorian.pm', version => '0.14' },
         },
         resources => {
             repository => {
