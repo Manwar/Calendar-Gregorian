@@ -1,5 +1,8 @@
 Revision history for Calendar::Gregorian
 
+0.15  Mon Jan 23 10:40:00 2017
+      - Updated dependency on Date::Gregorian::Simple v0.10.
+
 0.14  Sat Jan 07 22:20:00 2017
       - Added dependency on Calendar::Plugin::Renderer v0.12.
       - Removed method validate_params(), no longer required.
